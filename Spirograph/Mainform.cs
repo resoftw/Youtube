@@ -9,10 +9,8 @@ namespace Spirograph
         private BufferedGraphicsContext context;
         private BufferedGraphics buffer;
 
-        private int R = 120, r = 80, d = 60;
-        private double angleOffset = 0;
+        private int R = 0, r = 0, d = 0;
         private double maxAngle;
-        private int frameCount = 0;
         private int cx=0, cy=0;
         public FMain()
         {
@@ -24,17 +22,12 @@ namespace Spirograph
             buffer = context.Allocate(this.CreateGraphics(), this.ClientRectangle);
 
             RandomizeParameters();
-            // ✅ Hitung jumlah langkah yang diperlukan untuk siklus penuh
-            //maxAngle = (2 * Math.PI * r) / GCD(R, r);
 
             timer = new System.Windows.Forms.Timer();
-            timer.Interval = 1; // ~60 FPS
+            timer.Interval = 1; 
             timer.Tick += (s, e) =>
             {
-                //angleOffset += 0.02;
-                //if (angleOffset >= maxAngle) angleOffset = 0;  // Reset ke awal setelah 1 siklus penuh
                 this.Invalidate();
-                //frameCount++;
             };
 
             timer.Start();
@@ -46,7 +39,6 @@ namespace Spirograph
             if (angle >= maxAngle*1.5)
             {
                 RandomizeParameters();
-                frameCount = 0;
                 angle = 0;
                 prev = null;
                 maxAngle = (2 * Math.PI * r) / GCD(R, r);
@@ -89,10 +81,8 @@ namespace Spirograph
             if (angle <= maxAngle)
             {
 
-                //int cx = ClientSize.Width / 2, cy = ClientSize.Height / 2;
                 for (int i = 0; i <= n; i++)
                 {
-                    //pencolor = Color.FromArgb(pencolor.ToArgb()+1);
                     Pen pen = new Pen(pencolor, 1.5f);
                     double x = cx + (R - r) * Math.Cos(angle) + d * Math.Cos(((R - r) / (double)r) * angle);
                     double y = cy + (R - r) * Math.Sin(angle) - d * Math.Sin(((R - r) / (double)r) * angle);
