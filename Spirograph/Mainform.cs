@@ -53,8 +53,12 @@ namespace Spirograph
             r = rand.Next(-R, R);
             d = rand.Next(-Math.Abs(r*2), Math.Abs(r*2));
             pencolor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
-            cx = rand.Next(64,ClientSize.Width-64);
-            cy = rand.Next(64,ClientSize.Height-64);
+            // RANDOM POSITION
+            //cx = rand.Next(64,ClientSize.Width-64);
+            //cy = rand.Next(64,ClientSize.Height-64);
+            // CENTER
+            cx = ClientSize.Width / 2;
+            cy = ClientSize.Height / 2;
         }
         protected override void OnPaint(PaintEventArgs e)
         {
