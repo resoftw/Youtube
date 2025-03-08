@@ -11,9 +11,6 @@ namespace Grafik
 
         private Spiro spiro;
 
-        private int R = 0, r = 0, d = 0;
-        private double maxAngle;
-        private int cx=0, cy=0;
         public FMain()
         {
             this.ClientSize = new Size(540, 960);
