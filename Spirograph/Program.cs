@@ -1,4 +1,4 @@
-namespace Spirograph
+namespace Grafik
 {
     internal static class Program
     {

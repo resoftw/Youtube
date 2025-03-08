@@ -1,4 +1,4 @@
-﻿namespace Spirograph
+﻿namespace Grafik
 {
     partial class FMain
     {
