@@ -37,13 +37,7 @@ namespace Grafik
             DrawGrafik(buffer.Graphics);
             buffer.Render(e.Graphics);
         }
-
-        private void DrawGrafik(Graphics g)
-        {
-            spiro.Draw(g);
-        }
-
-   
+ 
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
@@ -51,6 +45,10 @@ namespace Grafik
             {
                 buffer = context.Allocate(this.CreateGraphics(), this.ClientRectangle);
             }
+        }
+        private void DrawGrafik(Graphics g)
+        {
+            spiro.Draw(g);
         }
 
     }
