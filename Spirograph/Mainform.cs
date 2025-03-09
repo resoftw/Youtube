@@ -9,7 +9,7 @@ namespace Grafik
 
         private System.Windows.Forms.Timer timer;
 
-        private ASpiro spiro;
+        private BSpiro spiro;
         private Bitmap bitmap;
         private Graphics bufferGraphics;
         private int frmnum = 0;
