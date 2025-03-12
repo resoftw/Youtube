@@ -22,10 +22,11 @@ namespace Grafik
         {
             fmain = mainf;
             RandomizeParameters();
-            R = 150;
-            r = 50;
-            d = 15;
+            R = 200;
+            r = 100;
+            d = 50;
             maxAngle = (2 * Math.PI * r) / GCD(R, r);
+            //RandomizeParameters();
         }
         private void RandomizeParameters()
         {
@@ -142,7 +143,7 @@ namespace Grafik
                 Pen pen = new Pen(warna.GetColor(), 1.5f);
                 double a = ang + angle;
                 double x = cx + (R - r) * Math.Cos(a) + d * Math.Cos(((R - r) / (double)r) * ang);
-                double y = cy + (R - r) * Math.Sin(ang) - d * Math.Sin(((R - r) / (double)r) * a);
+                double y = cy + (R - r) * Math.Sin(a) - d * Math.Sin(((R - r) / (double)r) * ang);
                 if (prev != null) g.DrawLine(pen, prev.Value, new PointF((float)x, (float)y));
                 prev = new PointF((float)x, (float)y);
                 //Increment(dt);
